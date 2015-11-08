@@ -1,0 +1,25 @@
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+
+.pulse-primary{
+  animation-name: pulsePrimary;
+}
+
+.pulse-secondary{
+  animation-name: pulseSecondary;
+}
+
+@keyframes pulsePrimary{ 
+  0%, 100%{ 
+  	fill: $trout;
+   }
+  50% {
+  	fill: $jungle-green; 
+  }
+}
+
+@keyframes pulseSecondary { 
+  0%, 100%{ fill: $trout;}
+  50% { fill: $primrose-yellow;}
+}

@@ -1,0 +1,103 @@
+/* ==========================================================================
+   Accordion Object
+   ========================================================================== */
+
+.accordion__section {
+  position: relative;
+  width: 100%;
+  margin: 10px auto;  
+  display: block; 
+  button {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    height: 3em;
+    width: 3em;
+    outline: 0;
+    border: 0;
+    background: none;
+    text-indent: -9999%;
+    pointer-events: none;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 12px;
+      width: 4px; 
+      border-radius: .3em;
+      background: $yellow;
+      transform-origin: 50%;
+      top: 50%;
+      left: 50%;
+      transition: all .25s ease-in-out;
+      transform: translate(75%, -50%) rotate(45deg);
+    }
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 12px;
+      width: 4px;
+      border-radius: .3em;
+      background: $yellow;
+      transform-origin: 50%;
+      top: 50%;
+      left: 50%;
+      transition: all .25s ease-in-out;
+      transform: translate(-75%, -50%) rotate(-45deg);
+    }
+  }
+}
+
+.accordion__section.open {
+  button {
+    &:before, &:after {
+      height: 14px;
+    }
+    &:before {
+      transform: translate(0%, -50%) rotate(-45deg);
+    }
+    &:after {
+      transform: translate(0%, -50%) rotate(45deg);
+    }
+  }
+  .accordion__body {
+    max-height: 1000px; 
+    transition: max-height 1s $cubic-ease; 
+  }
+} 
+
+.accordion__body {
+  max-height: 0; 
+  overflow: hidden;
+  // background: darken($purple-dark, 10%); 
+  transition: max-height 600ms $cubic-ease; 
+}
+
+.accordion__header{
+  width: 100%;
+  overflow: hidden;
+  background: $pink;
+  cursor: pointer;
+  font-weight: 700;
+  color: white;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 1em;
+  padding-right: 2.1em;
+}
+
+.accordion__content {
+  padding: 20px;
+  color: $purple-light;
+}
+
+.accordion__image{
+  width: 50%; 
+  height: 100%; 
+  img{
+    width: 100%; 
+    height: auto; 
+  }
+}

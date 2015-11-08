@@ -1,0 +1,61 @@
+ /* ==========================================================================
+    Mixins
+ ========================================================================== */
+
+
+@mixin font-size($sizeValue: 1){
+  font-size: ($sizeValue) + px;
+  font-size: ($sizeValue / 10) + rem;
+}
+@mixin font-smoothing{
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+@mixin image-replace($display) {
+  display: $display;
+  text-indent: 200%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+@mixin float-clear {
+  &:after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+@mixin visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+@mixin breakpoint-min($break) {
+  @media (min-width: $break) { @content; }
+} 
+@mixin breakpoint-max($break){
+  @media (max-width: $break) { @content; }
+}
+@mixin breakpoint-min-max($breakmin, $breakmax){
+  @media (min-width: $breakmin + 1) and (max-width: $breakmax) { @content; }
+}
+@mixin smooth-skew{
+  backface-visibility: hidden; 
+  outline: 1px solid transparent;
+}
+@mixin border-box { 
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box; 
+  box-sizing: border-box; 
+}
+@mixin container{
+  margin: 0 auto; 
+  padding-left: $spacing; 
+  padding-right: $spacing; 
+  max-width: $max-width; 
+  @include breakpoint-min($tablet){
+    padding-left: $spacing-double; 
+    padding-right: $spacing-double; 
+  }
+}

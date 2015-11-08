@@ -1,0 +1,43 @@
+ /* ==========================================================================
+    Variables (Sizes, Colors, Fonts, Image URLS, etc.)
+ ========================================================================== */
+
+/* Sizes */
+$base-unit: 18; 
+$base-unit-px: $base-unit * 1px; 
+
+$spacing: $base-unit-px; 
+$spacing-double: $spacing * 2; 
+$spacing-triple: $spacing * 3; 
+$spacing-half: $spacing / 2; 
+$spacing-quarter: $spacing / 4; 
+
+$h1: $base-unit * 2; 
+$h2: $base-unit * 1.5; 
+$h3: $base-unit * 1.17; 
+$h4: $base-unit * 1; 
+$h5: $base-unit * 0.83; 
+$h6: $base-unit * 0.67; 
+
+$line-height: 1.6; 
+$line-height-sm: 1.2; 
+
+/* Fonts */
+
+$font-primary: 'Gentium Basic', serif; 
+$font-secondary: 'Open Sans', sans-serif; 
+
+$purple-dark: #4A2377; 
+$purple-light: #61529F;
+$pink: #BA69DE;
+$yellow: #F3E96D; 
+
+
+//Alternate Color Scheme
+$trout: #515661; 
+$jungle-green: #2E9F82; 
+$mantis-green: #68C170; 
+$primrose-yellow: #D6EC8C; 
+
+
+$cubic-ease: cubic-bezier(0.22, 0.61, 0.18, 0.7);  
